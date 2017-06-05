@@ -645,15 +645,20 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
   <script>
       // 评论框
       var url = '', flag = false;
+      var script1 = document.createElement('script');
+      var script2 = document.createElement('script');
+      var script3 = document.createElement('script');
+      var script4 = document.createElement('script');
+      script1.innerHTML='var yunModuleEnv = true;';
+      script2.src='https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
+      script3.innerHTML='var yunTieProductKey = "5330f5eff52843be9aa722adb3e56259";Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA==", true);';
+      script4.innerHTML='var cloudTieConfig = {url: document.location.href,sourceId: "",productKey: "5330f5eff52843be9aa722adb3e56259",target: "cloud-tie-wrapper"};var yunManualLoad = true;Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);';
       var oBody = document.getElementsByTagName('body')[0];
       var timer = setInterval(function () {
           url = window.location.href;
           flag = /\/post\//.test(url);
           console.log(flag);
-          if(flag){
-              getComment();
-              clearInterval(timer);
-          }
+          flag ? (getComment(), clearInterval(timer)) : null;
       }, 100)
       function getComment() {
           var core_content = document.getElementsByClassName('src-components-post-post---post---Adn6R')[0];
@@ -666,39 +671,22 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
           commentBox.appendChild(commentInner);
           var str =
               `
-            <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-            <a class="cloud-tie-join-count" href="javascript:void(0);">
-            <span class="icon-comment"></span>
-            <span class="join-count">0</span>
-            <span class="join-text">人参与</span>
-            </a>
+        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<a class="cloud-tie-join-count" href="javascript:void(0);">
+    <span class="icon-comment"></span>
+    <span class="join-count">0</span>
+    <span class="join-text">人参与</span>
+</a>
             <span
             lang="join-count"
             class="join-count"
             data-url=""
             data-sourceId=""
             >0</span>
-            `;
+        `;
           commentInner.innerHTML = str;
+          oBody.appendChild(script1,script2,script3,script4)
       }
-  </script>
-  <!-- JavaScript 配置 -->
-  <script>var yunModuleEnv = true;</script>
-  <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-  <script>
-      var yunTieProductKey = "5330f5eff52843be9aa722adb3e56259";
-      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA==", true);
-  </script>
-  <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-  <script>
-      var cloudTieConfig = {
-          url: document.location.href,
-          sourceId: "",
-          productKey: "5330f5eff52843be9aa722adb3e56259",
-          target: "cloud-tie-wrapper"
-      };
-      var yunManualLoad = true;
-      Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
   </script>
   <!-- comment end -->
 </body>
