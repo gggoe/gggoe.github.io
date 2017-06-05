@@ -647,7 +647,7 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
       var url = '', flag = false;
       var timer = setInterval(function () {
           url = window.location.href;
-          flag = /\/psot\//.test(url);
+          flag = /\/post\//.test(url);
           console.log(flag);
           flag ? (getComment(),clearInterval(timer)) :null ;
       }, 100)
