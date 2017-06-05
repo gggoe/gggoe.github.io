@@ -649,7 +649,7 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
           url = window.location.href;
           flag = /\/psot\//.test(url);
           console.log(flag);
-          flag ? getComment() : clearInterval(timer);
+          flag ? (getComment(),clearInterval(timer)) :null ;
       }, 100)
       function getComment() {
           var core_content = document.getElementsByClassName('src-components-post-post---post---Adn6R')[0];
