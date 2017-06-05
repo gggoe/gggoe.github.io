@@ -730,14 +730,9 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
     })()
 </script>
 
-
-<!-- UY BEGIN -->
-<div id="uyan_frame"></div>
-<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2135241"></script>
-<!-- UY END -->
-
 <!-- foot -->
 <script>
+    // 博客运行时间
     var span_dt_dt = document.getElementsByClassName('src-components-footer-footer---s2---2E3yO')[0];
     function show_date_time() {
         setTimeout(show_date_time, 1000);
@@ -767,6 +762,12 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         span_dt_dt.innerHTML = str;
     }
     show_date_time();
+    // 评论框
+    var comment_box = document.getElementsByClassName('src-components-post-post---Comment---S1vOo')[0];
+    comment_box.innerHTML=`<div id="uyan_frame"></div>`
 </script>
+<!-- UY BEGIN -->
+<script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2135241"></script>
+<!-- UY END -->
 </body>
 </html>
