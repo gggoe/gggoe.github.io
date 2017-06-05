@@ -769,20 +769,15 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
     // 评论框
     setTimeout(function(){
         var comment_box = document.getElementsByClassName('src-components-post-post---Comment---S1vOo')[0];
-        var str =
-            `
-        <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
-<a class="cloud-tie-join-count" href="javascript:void(0);">
-    <span class="icon-comment"></span>
-    <span class="join-count">0</span>
-    <span class="join-text">人参与</span>
-</a>
-<span
-lang="join-count"
-class="join-count"
-data-url=""
-data-sourceId=""
->0</span>
+        var str = '<div id="uyan_frame"></div><script type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=2135241">' + '<' + '/script>';
+        console.log(comment_box);
+        comment_box.innerHTML = str;
+        comment_box.onclick=function(){
+            comment_box.innerHTML = str;
+        }
+    },10)
+</script>
+<!-- JavaScript 配置 -->
 <script>var yunModuleEnv = true;</script>
 <script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
 <script>
@@ -800,15 +795,6 @@ data-sourceId=""
     var yunManualLoad = true;
     Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
 </script>
-
-
-        `;
-        console.log(comment_box);
-        comment_box.innerHTML = str;
-        comment_box.onclick=function(){
-            comment_box.innerHTML = str;
-        }
-    },10)
-</script>
 <!-- comment end -->
+</body>
 </html>
