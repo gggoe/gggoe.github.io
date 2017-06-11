@@ -675,60 +675,29 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         `;
         commentInner.innerHTML = str;
 
-        function loadJs(src, callback) {
-            var script = document.createElement('script');
-            var loaded;
-            script.src = src;
-            if (typeof callback === 'function') {
-                script.onload = script.onreadystatechange = function () {
-                    if (!loaded && (!script.readyState || /loaded|complete/.test(script.readyState))) {
-                        script.onload = script.onreadystatechange = null;
-                        loaded = true;
-                        callback();
-                    }
-                }
-            }
-            commentInner.appendChild(script);
-            console.log(script);
-        }
-        var yunModuleEnv = true;
-        loadJs('https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js', function () {
-            var yunTieProductKey = "5330f5eff52843be9aa722adb3e56259";
-            Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA==", true);
-            loadJs('https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js', function () {
-                var cloudTieConfig = {
-                    url: document.location.href,
-                    sourceId: "",
-                    productKey: "5330f5eff52843be9aa722adb3e56259",
-                    target: "cloud-tie-wrapper"
-                };
-                var yunManualLoad = true;
-                Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
-            })
-        })
     }
 
 </script>
-<!-- comment end -->
-<!-- JavaScript 配置 begin -->
-<!--<script>var yunModuleEnv = true;</script>-->
-<!--<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>-->
-<!--<script>-->
-    <!--var yunTieProductKey = "5330f5eff52843be9aa722adb3e56259";-->
-    <!--Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA==", true);-->
-<!--</script>-->
-<!--<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>-->
-<!--<script>-->
-    <!--var cloudTieConfig = {-->
-        <!--url: document.location.href,-->
-        <!--sourceId: "",-->
-        <!--productKey: "5330f5eff52843be9aa722adb3e56259",-->
-        <!--target: "cloud-tie-wrapper"-->
-    <!--};-->
-    <!--var yunManualLoad = true;-->
-    <!--Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);-->
-<!--</script>-->
-<!-- JavaScript 配置 end -->
+ <!--comment end -->
+ <!--JavaScript 配置 begin -->
+<script>var yunModuleEnv = true;</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+    var yunTieProductKey = "5330f5eff52843be9aa722adb3e56259";
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vZXh0ZW5kL2xpc3Rfam9pbl9zY3JpcHQuaHRtbA==", true);
+</script>
+<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
+<script>
+    var cloudTieConfig = {
+        url: document.location.href,
+        sourceId: "",
+        productKey: "5330f5eff52843be9aa722adb3e56259",
+        target: "cloud-tie-wrapper"
+    };
+    var yunManualLoad = true;
+    Tie.loader("aHR0cHM6Ly9hcGkuZ2VudGllLjE2My5jb20vcGMvbGl2ZXNjcmlwdC5odG1s", true);
+</script>
+ <!--JavaScript 配置 end -->
 
 </body>
 </html>
