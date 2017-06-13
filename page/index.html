@@ -665,13 +665,19 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         commentInner.innerHTML = str;
         console.log(1);
 
-        console.log(2);
+        var script2= document.createElement('script');
+        script2.innerHTML = `
         var cloudTieConfig = {
             url: document.location.href,
             sourceId: "",
             productKey: "5330f5eff52843be9aa722adb3e56259",
             target: "cloud-tie-wrapper"
         };
+        console.log(2);
+        `;
+        commentInner.appendChild(script2);
+
+        
         var script = document.createElement('script');
         script.src = 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
         commentInner.appendChild(script);
