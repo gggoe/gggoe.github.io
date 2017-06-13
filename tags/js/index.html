@@ -665,31 +665,35 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         commentInner.innerHTML = str;
         console.log(1);
 
-//        var cloudTieConfig = {
-//            url: document.location.href,
-//            sourceId: "",
-//            productKey: "5330f5eff52843be9aa722adb3e56259",
-//            target: "cloud-tie-wrapper"
-//        };
-//        var script = document.createElement('script');
-//        script.src = 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
-//        commentInner.appendChild(script);
+        console.log(2);
+        var cloudTieConfig = {
+            url: document.location.href,
+            sourceId: "",
+            productKey: "5330f5eff52843be9aa722adb3e56259",
+            target: "cloud-tie-wrapper"
+        };
+        var script = document.createElement('script');
+        script.src = 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
+        commentInner.appendChild(script);
+        var script1 = document.createElement('script');
+        script1.src = 'https://gggoe.github.io/WangRuiFeng-suning/1.js';
+        commentInner.appendChild(script1);
     }
 
 </script>
 <!--comment end-->
 <!--JavaScript 配置 begin-->
-<script>
-    var cloudTieConfig = {
-        url: document.location.href,
-        sourceId: "",
-        productKey: "5330f5eff52843be9aa722adb3e56259",
-        target: "cloud-tie-wrapper"
-    };
-    console.log(2);
-</script>
-<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
-<script src="https://gggoe.github.io/WangRuiFeng-suning/1.js"></script>
+<!--<script>-->
+    <!--var cloudTieConfig = {-->
+        <!--url: document.location.href,-->
+        <!--sourceId: "",-->
+        <!--productKey: "5330f5eff52843be9aa722adb3e56259",-->
+        <!--target: "cloud-tie-wrapper"-->
+    <!--};-->
+    <!--console.log(2);-->
+<!--</script>-->
+<!--<script src="https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>-->
+<!--<script src="https://gggoe.github.io/WangRuiFeng-suning/1.js"></script>-->
 <!--JavaScript 配置 end-->
 
 </body>
