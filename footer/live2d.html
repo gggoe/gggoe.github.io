@@ -695,20 +695,10 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         }
 
         loadJs('https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js', function () {
-            console.log(3);
-            var input_tips = document.getElementsByClassName('input-tips')[0];
-            var tie_title = document.getElementsByClassName('tie-title')[0];
-            input_tips.innerHTML = '快来留言吧XD';
-            tie_title.innerHTML = '评论';
-            console.log(input_tips,tie_title,3);
+            var script = document.createElement('script');
+            script.src = 'https://gggoe.github.io/WangRuiFeng-suning/1.js';
+            commentInner.appendChild(script);
         })
-        window.onload=function(){
-            var input_tips = document.getElementsByClassName('input-tips')[0];
-            var tie_title = document.getElementsByClassName('tie-title')[0];
-            input_tips.innerHTML = '快来留言吧XD';
-            tie_title.innerHTML = '评论';
-            console.log(input_tips,tie_title,4);
-        };
     }
 
 </script>
