@@ -665,10 +665,13 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         commentInner.innerHTML = str;
         console.log(1);
 
-        function loadJs(src, callback) {
-            var script = document.createElement('script');
-            var loaded;
-            script.innerHTML = `
+        var script = document.createElement('script');
+        script.src = 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
+        commentInner.appendChild(script);
+
+        window.setTimeout(function(){
+            var script2= document.createElement('script');
+            script2.innerHTML = `
         var cloudTieConfig = {
             url: document.location.href,
             sourceId: "",
@@ -677,30 +680,15 @@ loadlive2d("live2dcanvas" ,"/live2d/assets/koharu/koharu.model.json")
         };
         console.log(2);
         `;
-            if (typeof callback === 'function') {
-                script.onload = script.onreadystatechange = function () {
-                    if (!loaded && (!script.readyState || /loaded|complete/.test(script.readyState))) {
-                        script.onload = script.onreadystatechange = null;
-                        loaded = true;
-                        callback();
-                    }
-                }
-            }
-            commentInner.appendChild(script);
-        }
-
-        loadJs('', function () {
-            var script = document.createElement('script');
-            script.src = 'https://img1.cache.netease.com/f2e/tie/yun/sdk/loader.js';
-            commentInner.appendChild(script);
-        })
-
+            commentInner.appendChild(script2);
+        },100);
         window.onload = function () {
             var input_tips = document.getElementsByClassName('input-tips')[0];
             var tie_title = document.getElementsByClassName('tie-title')[0];
             input_tips.innerHTML = '快来留言吧XD';
             tie_title.innerHTML = '评论';
         };
+
     }
 
 </script>
